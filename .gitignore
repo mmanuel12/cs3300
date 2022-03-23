@@ -29,3 +29,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Added because of rspec tutorial from github Iteration 4
+coverage/
