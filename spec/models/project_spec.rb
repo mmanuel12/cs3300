@@ -39,6 +39,22 @@ RSpec.describe Project, type: :model do
       project.update(description: "Some description content goes here 2")
       expect(project.description).to eq('Some description content goes here 2')
     end
+
+    it "should be able to return error message when title is empty" do
+      project = Project.create(title: "Title 1", description: "Some description content goes here 1")
+      project.update(description: "Some description content goes here 2")
+      expect(project.description).to eq('Some description content goes here 2')
+    end
+
+    it "should be able to deny project creation if the title is left empty" do
+      project = Project.create(title: "", description: "Some description content goes here 1")
+      expect(Project.count).to eq(0)
+    end
+
+    it "should be able to deny project creation if the description is left empty" do
+      project = Project.create(description: "Title", description: "")
+      expect(Project.count).to eq(0)
+    end
   end
 
   context "scopes tests" do
