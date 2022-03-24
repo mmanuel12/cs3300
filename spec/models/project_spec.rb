@@ -16,6 +16,45 @@ RSpec.describe Project, type: :model do
       project = Project.new(title: "Title", description: "Some description content goes here")
       expect(project.save).to eq(true)
     end
+
+    it "should be able to delete a project" do
+      project1 = Project.create(title: "Title1", description: "Some description content goes here 1")
+      project1.delete
+      expect(Project.count).to eq(0)
+    end
+
+    it "should be able to count current project totals" do
+      project = Project.create(title: "Title", description: "Some description content goes here")
+      expect(Project.count).to eq(1)
+    end
+
+    it "should be able to edit a project title" do
+      project = Project.create(title: "Title 1", description: "Some description content goes here")
+      project.update(title: "Title 2")
+      expect(project.title).to eq('Title 2')
+    end
+
+    it "should be able to edit a project description" do
+      project = Project.create(title: "Title 1", description: "Some description content goes here 1")
+      project.update(description: "Some description content goes here 2")
+      expect(project.description).to eq('Some description content goes here 2')
+    end
+
+    it "should be able to return error message when title is empty" do
+      project = Project.create(title: "Title 1", description: "Some description content goes here 1")
+      project.update(description: "Some description content goes here 2")
+      expect(project.description).to eq('Some description content goes here 2')
+    end
+
+    it "should be able to deny project creation if the title is left empty" do
+      project = Project.create(title: "", description: "Some description content goes here 1")
+      expect(Project.count).to eq(0)
+    end
+
+    it "should be able to deny project creation if the description is left empty" do
+      project = Project.create(description: "Title", description: "")
+      expect(Project.count).to eq(0)
+    end
   end
 
   context "scopes tests" do

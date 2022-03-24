@@ -7,6 +7,12 @@ RSpec.describe ProjectsController, type: :controller do
       # expect(response.success).to eq(true)
       expect(response).to be_success
     end
+
+    it "returns a success response" do
+      get :index
+      # expect(response.success).to eq(true)
+      expect(response).to be_success
+    end
   end
 
   context "GET #show" do
