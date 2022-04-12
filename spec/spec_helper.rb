@@ -23,7 +23,6 @@ RSpec.configure do |config|
   # assertions if you prefer.
 
   #the following is attempt to fix authentication errors with rspec and devise
-  config.include RailsDomIdHelper, type: :feature
   config.include FactoryGirl::Syntax::Methods
 
   #these two lines specifically are an answer to a post for authentication errors using rspec and devise
