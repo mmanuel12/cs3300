@@ -1,14 +1,13 @@
 require "rails_helper"
-Devise::TestHelpers
-
-sign_in :user, @user
-sign_in @user
-
-sign_out :user, @user
-sign_out @user
 
 RSpec.feature "Visiting the homepage", type: :feature do
- 
+  Devise::TestHelpers
+  sign_in :user, @user
+  sign_in @user
+
+  sign_out :user, @user
+  sign_out @user
+
   scenario "The visitor should see projects" do
     visit root_path
     expect(page).to have_text("Projects")
