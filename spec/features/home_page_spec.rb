@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.feature "Visiting the homepage", type: :feature do
-  Devise::TestHelpers
+  
   sign_in :user, @user
   sign_in @user
 
