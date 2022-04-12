@@ -21,6 +21,16 @@ RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+
+  #the following is attempt to fix authentication errors with rspec and devise
+  config.include TodoListHelpers, type: :feature
+  config.include RailsDomIdHelper, type: :feature
+  config.include FactoryGirl::Syntax::Methods
+  
+  #these two lines specifically are an answer to a post for authentication errors using rspec and devise
+  config.include AuthenticationHelpers::Controller, tpye: :controller
+  config.include AuthenticationHelpers::Feature, tpye: :feature
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
@@ -98,6 +108,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 
-  config.include AuthenticationHelpers::Controller, tpye: :controller
-  config.include AuthenticationHelpers::Feature, tpye: :feature
+ 
 end
