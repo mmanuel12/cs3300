@@ -24,8 +24,8 @@ RSpec.configure do |config|
 
   #the following is attempt to fix authentication errors with rspec and devise
   #these two lines specifically are an answer to a post for authentication errors using rspec and devise
-  config.include AuthenticationHelpers::Controller, tpye: :controller
-  config.include AuthenticationHelpers::Feature, tpye: :feature
+  config.include AuthenticationHelpers::Controller, type: :controller
+  config.include AuthenticationHelpers::Feature, type: :feature
 
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
