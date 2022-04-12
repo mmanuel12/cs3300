@@ -9,7 +9,7 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     it "returns a success response" do
-      get :index
+      get :project
       # expect(response.success).to eq(true)
       expect(response).to be_success
     end
@@ -17,6 +17,11 @@ RSpec.describe ProjectsController, type: :controller do
 
   context "GET #show" do
     let!(:project) { Project.create(title: "Test title", description: "Test description") }
+    it "returns a success response" do
+      get :show, params: { id: project }
+      expect(response).to be_success
+    end
+
     it "returns a success response" do
       get :show, params: { id: project }
       expect(response).to be_success

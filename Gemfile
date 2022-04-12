@@ -65,8 +65,6 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   
-  gem 'simplecov', require: false
-
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -81,3 +79,5 @@ group :development, :test do
 end
 
 gem 'simplecov', require: false, group: :test
+
+gem 'devise'
