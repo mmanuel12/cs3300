@@ -70,10 +70,3 @@ SimpleCov.start 'rails' do
   add_filter '/spec/' # for rspec
 end
 
-Devise::TestHelpers
-
-sign_in :user, @user
-sign_in @user
-
-sign_out :user, @user
-sign_out @user
