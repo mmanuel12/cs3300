@@ -13,3 +13,53 @@
 /* Custom bootstrap variables must be set or imported *before* bootstrap.
 */
 @import "bootstrap";
+
+h2 {
+    color:red;
+}
+
+h1 {
+    color:black;
+    text-align: center;
+}
+
+p {
+    color: slategray;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+td {
+    height: 10px;
+    border-bottom:slategray solid 2px;
+    vertical-align: bottom;
+}
+
+th {
+    height: 10px;
+    border-bottom:slategray solid 10px;
+    background-color: beige;
+}
+
+tr:hover {background-color:lightcoral;}
+
+.field {
+    color: rgb(24, 19, 71);
+}
+
+ul {
+    background-color: lightgray;
+}
+li {
+    display: inline;
+}
+
+img {
+    width: 1550px;
+    height: 250px;
+}
