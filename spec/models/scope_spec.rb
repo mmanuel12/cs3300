@@ -15,5 +15,12 @@ RSpec.describe Project, type: :model do
       expect(Project.count).to eq(3)
     end
 
+    it "should allow the creation of several projects" do
+      (1...100).each { Project.create(params) }
+      expect(Project.count).to eq(102)
+    end
+
+    
+
   end
 end

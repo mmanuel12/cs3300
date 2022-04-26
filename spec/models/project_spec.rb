@@ -55,6 +55,12 @@ RSpec.describe Project, type: :model do
       project = Project.create(description: "Title", description: "")
       expect(Project.count).to eq(0)
     end
+
+    it "should be able to delete a project" do
+      project = Project.create(description: "Title", description: "Some description content goes here 1")
+      project.delete
+      expect(project.title).to eq(nil)
+    end
   end
 
   context "scopes tests" do
