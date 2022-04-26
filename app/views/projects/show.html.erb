@@ -1,19 +1,31 @@
+<%= image_tag "network.jpg", :class=> "logo" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
+<ul>
+  <%= link_to "__Home__|", projects_path, :class=> "link" %>
+  <%= link_to "__Sign Up__|", new_user_registration_path, :class=> "link" %>
+  <%= link_to "__Sign In__|", user_session_path, :class=> "link" %>
+  <%= link_to "__Logout__", destroy_user_session_path, method: :delete, :class=> "link"  %>
+</ul>
+
+<h1>
   <strong>Title:</strong>
   <%= @project.title %>
-</p>
+</h1>
 
-<p>
+<h2>
   <strong>Description:</strong>
   <%= @project.description %>
-</p>
+</h2>
 
-<p>
+<h3>
   <strong>Image:</strong>
-  <%= image_tag(@project.image) %>
-</p>
+  <%= image_tag(@project.image, :class=> "display") %>
+</h3>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to '__Edit__|', edit_project_path(@project), :class=> "alink" %> 
+<%= link_to '__Back__', projects_path, :class=> "alink" %>
+
+<%= image_tag "network.jpg", :class=> "logo" %>
+

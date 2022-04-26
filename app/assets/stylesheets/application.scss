@@ -14,8 +14,14 @@
 */
 @import "bootstrap";
 
+h3 {
+    color:rgb(24, 19, 71);
+    text-align: center;
+}
+
 h2 {
     color:red;
+    text-align: center;
 }
 
 h1 {
@@ -30,6 +36,7 @@ p {
 
 table {
     width: 100%;
+    height: 80%;
     text-align: center;
     border-bottom: 1px solid;
 }
@@ -53,6 +60,8 @@ tr:hover {background-color:lightcoral;}
 }
 
 ul {
+    text-align: right;
+    ;
     background-color: lightgray;
 }
 li {
@@ -60,11 +69,33 @@ li {
 }
 
 img {
-    width: 1550px;
-    height: 250px;
+    width: 300px;
+    height: 150px;
 }
 
-imgage_tag {
-    width: 10px;
-    height: 10px;
+.logo {
+    width: 1550px;
+    height: 150px;
+}
+
+.display {
+    width: 700px;
+    height: 350px;
+}
+
+.preview {
+    width: 300px;
+    height: 150px;
+}
+
+.link {
+    color: purple;
+}
+
+.alink {
+    color: salmon;
+}
+
+.blink {
+    color: rgb(79, 168, 168);
 }
