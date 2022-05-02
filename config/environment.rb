@@ -5,4 +5,4 @@ require_relative 'application'
 Rails.application.initialize!
 
 # For cloudinary
-config.gem 'cloudinary'
+#config.gem 'cloudinary'
