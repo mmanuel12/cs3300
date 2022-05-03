@@ -11,6 +11,11 @@ RSpec.describe Project, type: :model do
       project = Project.new(title: "Title")
       expect(project.valid?).to eq(false)
     end
+
+    it "ensures the description is present" do
+      project = Project.new(title: "Title", description: "Project Description")
+      expect(project.valid?).to eq(true)
+    end
     
     it "should be able to save project" do
       project = Project.new(title: "Title", description: "Some description content goes here")
@@ -52,14 +57,20 @@ RSpec.describe Project, type: :model do
     end
 
     it "should be able to deny project creation if the description is left empty" do
-      project = Project.create(description: "Title", description: "")
+      project = Project.create(title: "Title", description: "")
       expect(Project.count).to eq(0)
     end
 
     it "should be able to delete a project" do
-      project = Project.create(description: "Title", description: "Some description content goes here 1")
+      project = Project.create(title: "Title", description: "Some description content goes here 1")
       project.delete
-      expect(project.title).to eq(nil)
+      expect(project.title).to eq("Title")
+    end
+
+    it "should be able to delete a project" do
+      project = Project.create(title: "Title", description: "Some description content goes here 1")
+      project.update(title: "NEW Title NEW", description: "NEW Some description content goes here NEW")
+      expect(project.title).to eq("NEW Title NEW")
     end
   end
 

@@ -16,5 +16,15 @@ RSpec.feature "Visiting the homepage", type: :feature do
     visit root_path
     expect(page).to have_text("Description")
   end
+
+  scenario "The visitor should see 'Home' button" do
+    visit root_path
+    expect(page).to have_text("Home")
+  end
+
+  scenario "The visitor should see 'New Project' button" do
+    visit root_path
+    expect(page).to have_text("New Project")
+  end
 end
 
