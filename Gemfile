@@ -84,3 +84,5 @@ end
 gem 'simplecov', require: false, group: :test
 
 gem 'devise'
+
+gem 'cloudinary'
