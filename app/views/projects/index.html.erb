@@ -26,7 +26,19 @@
     </tr>
   </thead>
 
+
+
   <tbody>
+  <tr>
+    <td><%= 'Infographic' %></td>
+    <td><%= 'A description of what cryptocurrency is delivered in an a concise visual form.' %></td>
+    <td><%= image_tag "InfoGraphic Assignment Final Version.png", :class=> "link" %></td>
+    <td><%= link_to '__Show__|' %></td>
+    <td><%= link_to '__Edit__|' %></td>
+    <td><%= link_to '__Destroy__|' %></td>
+  <tr>
+
+
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.title %></td>
